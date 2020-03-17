@@ -34,21 +34,25 @@ function generatePassword() {
         arrPasswordCharacters.push(arrSpecialChar);
       }
       var arrMergePassChar = arrPasswordCharacters.flat(1);
-      var passwordCharacters = arrMergePassChar.toString();
-      for (var i = 0; i < pwLength; i++) {
-        var autoPassword = passwordCharacters.charAt(Math.floor(Math.random() * passwordCharacters.length));
+      var autoPassword = []
+
+      for (let i = 0; i < pwLength; i++) {
+        var randomPassword = arrMergePassChar[~~(Math.random() * arrMergePassChar.length)];
+        autoPassword.push(randomPassword)
       }
+
       console.log(arrPasswordCharacters)
       console.log(arrMergePassChar)
-      console.log(passwordCharacters)
-      console.log(autoPassword)
+      console.log(autoPassword.join(""))
       console.log("good")
     }
     else {
+      alert("Please select at least one character type.  Thanks!")
       console.log("bad")
     }
   }
   else {
+    alert("Please select a password length greater than or equal to 8 or less than or equal to 128.  Thanks!")
     console.log("Bad")
   }
 }
