@@ -9,7 +9,6 @@ var arrLowerCase = Array.from(lowerCase);
 var arrUpperCase = Array.from(upperCase);
 var arrNumbers = Array.from(numbers);
 var arrSpecialChar = Array.from(specialChar);
-
 // Code to generate random password
 function generatePassword() {
   // Gathering user inputs for required password criteria
@@ -63,13 +62,11 @@ function generatePassword() {
     generatePassword()
   }
 }
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
