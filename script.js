@@ -15,30 +15,33 @@ function generatePassword() {
     var useUppercase = confirm("Would you like your password to contain a upercase letter?");
     var useNumber = confirm("Would you like your password to contain a number?");
     var useSpecialChar = confirm("Would you like your password to contain a special character?");
-    var arrUserResponses = [useLowercase, useUppercase, useNumber, useSpecialChar]
+    var arrUserResponses = [useLowercase, useUppercase, useNumber, useSpecialChar];
     var arrPasswordCharacters = [];
 
     if (arrUserResponses.some(Boolean)) {
       if (arrUserResponses[0] === true) {
-        arrPasswordCharacters.push(arrLowerCase)
+        arrPasswordCharacters.push(arrLowerCase);
       }
       if (arrUserResponses[1] === true) {
-        arrPasswordCharacters.push(arrUpperCase)
+        arrPasswordCharacters.push(arrUpperCase);
       }
 
       if (arrUserResponses[2] === true) {
-        arrPasswordCharacters.push(arrNumbers)
+        arrPasswordCharacters.push(arrNumbers);
       }
 
       if (arrUserResponses[3] === true) {
-        arrPasswordCharacters.push(arrSpecialChar)
+        arrPasswordCharacters.push(arrSpecialChar);
       }
-      var arrMergePassChar = arrPasswordCharacters.flat(1)
-      var PasswordCharacters = arrMergePassChar.toString()
-    
+      var arrMergePassChar = arrPasswordCharacters.flat(1);
+      var passwordCharacters = arrMergePassChar.toString();
+      for (var i = 0; i < pwLength; i++) {
+        var autoPassword = passwordCharacters.charAt(Math.floor(Math.random() * passwordCharacters.length));
+      }
       console.log(arrPasswordCharacters)
       console.log(arrMergePassChar)
-      console.log(PasswordCharacters)
+      console.log(passwordCharacters)
+      console.log(autoPassword)
       console.log("good")
     }
     else {
